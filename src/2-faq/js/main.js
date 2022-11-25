@@ -30,7 +30,23 @@ var reportsWidget = {
     },
 
     beforeRenderItems(content){
-        console.log("CONTENT", content)
+        console.log("CONTENT", content);
+        let items = [];
+
+        content.items.forEach(element => {
+            if(element.type == "stock"){
+                new_obj = {...element, iconPath : "images/icon-stock.png"};
+            } 
+            if (element.type == "company"){
+                new_obj = {...element, iconPath : "images/icon-company.png"};
+            }
+            if (element.type == "financials"){
+                new_obj = {...element, iconPath : "images/icon-financials.png"};
+            }
+            items.push(new_obj);
+        });
+
+        content = {items};
 
         var modifiedContent = content;
 

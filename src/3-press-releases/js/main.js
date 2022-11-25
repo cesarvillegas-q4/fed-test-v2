@@ -1,4 +1,4 @@
-var prWidget = {
+var pressReleaseWidget = {
     options: {
         containerSelector: '.module-press-release',
         template: (
@@ -28,7 +28,6 @@ var prWidget = {
         content.items.forEach(function (el, ind, arr) {
             content.filteredItems.push(el)
         });
-
         return content;
     },
 
