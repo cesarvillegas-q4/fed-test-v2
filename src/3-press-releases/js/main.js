@@ -23,11 +23,17 @@ var pressReleaseWidget = {
     },
 
     beforeRenderItems(content){
+
+        console.log(content);
         content.filteredItems = [];
 
         content.items.forEach(function (el, ind, arr) {
-            content.filteredItems.push(el)
+            if(!el.headline.includes("*EARNINGS*")){
+                content.filteredItems.push(el);
+            };
         });
+
+        console.log(content);
         return content;
     },
 
@@ -39,7 +45,34 @@ var pressReleaseWidget = {
     },
 
     complete: function() {
-        // Add Slick Slider here (https://kenwheeler.github.io/slick/)
+        $('.module-press-release').slick({
+            centerMode: true,
+            mobileFirst: true,
+            slidesToShow: 1,
+            centerPadding: '0px',
+            arrows: true,
+            dots: false,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  centerMode: true,
+                  centerPadding: '0px',
+                  slidesToShow: 3,
+                  slidesToScroll: 3
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  centerMode: true,
+                  centerPadding: '0px',
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              }
+            ]
+          });
     }
 };
 
