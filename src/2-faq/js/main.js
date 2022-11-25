@@ -49,12 +49,13 @@ var reportsWidget = {
     complete: function() {
         q4App.toggle(
             $('.module-faq'), // Containing Element
-            '.module-faq_itemm', // Individual Item Selector
-            '', // Item Toggler Selector
-            '', // Item to Toggle Selector
-            false, // Accordion functionality?
-            false, // Show all / Hide all button?
-            true); // Open first item?
+            '.module-faq_item', // Individual Item Selector
+            '.module-faq_question', // Item Toggler Selector
+            '.module-faq_answer', // Item to Toggle Selector
+            true, // Accordion functionality?
+            true, // Show all / Hide all button?
+            true // Open first item?
+            ); // Include Classes?
     }
 };
 
