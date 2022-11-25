@@ -73,4 +73,31 @@
 }
 
 /* Begin styling the report items here! */
-.reports {}
+.reports {
+  display: grid; 
+  grid-template-columns: auto auto auto;
+  column-gap: 20px; 
+}    
+
+@media only screen and (max-width: 768px){
+  .reports {
+    display: grid; 
+    grid-template-columns: auto auto;
+  }  
+}
+
+@media only screen and (max-width: 480px){
+  .reports {
+    display: grid; 
+    grid-template-columns: auto;
+  }  
+}
+  
+.reports_item{ 
+  grid-row: auto; 
+  margin-bottom: 30px ;
+}
+
+.reports_title span{
+  color: #838689;
+}
